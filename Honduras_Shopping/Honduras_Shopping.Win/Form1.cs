@@ -16,17 +16,13 @@ namespace Honduras_Shopping.Win
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             var productosBL = new ProductosBL();
             var listadeProductos = productosBL.ObtenerProductos();
 
-            foreach (var Productos  in listadeProductos)
-            {
-                MessageBox.Show(Productos.Descripcion);
-            } 
+
+            listadeProductosBindingSource.DataSource = listadeProductos;
         }
+
+        
     }
 }
