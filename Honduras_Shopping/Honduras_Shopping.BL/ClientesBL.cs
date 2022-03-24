@@ -30,12 +30,13 @@ namespace Honduras_Shopping.BL
         public List<Cliente> ObtenerClientesActivos()
         {
             ListadeClientes = _contexto.Clientes
-                .Where(r => r.Activo == true)
                 .OrderBy(r => r.Nombre)
+                .Where(r => r.Activo == true)
                 .ToList();
 
             return ListadeClientes;
         }
+
 
         public void GuardarCliente(Cliente cliente)
         {
