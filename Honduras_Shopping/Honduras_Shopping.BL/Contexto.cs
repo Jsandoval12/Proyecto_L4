@@ -20,6 +20,7 @@ namespace Honduras_Shopping.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            Database.SetInitializer(new DatosdeInicio()); //Agraga datos de inicio a la base de datos al momento de crearla
         }
 
         public DbSet<Producto> Productos { get; set; }
@@ -27,6 +28,6 @@ namespace Honduras_Shopping.BL
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Orden> Ordenes { get; set; }
         public DbSet<OrdenDetalle> OrdenDetalle { get; set; }
-
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

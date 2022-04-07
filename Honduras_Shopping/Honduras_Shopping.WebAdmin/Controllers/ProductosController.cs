@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Honduras_Shopping.WebAdmin.Controllers
 {
+    [Authorize]
     public class ProductosController : Controller
     {
         ProductosBL _productosBL;
